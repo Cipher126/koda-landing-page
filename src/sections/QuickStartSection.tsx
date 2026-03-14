@@ -63,7 +63,7 @@ export function QuickStartSection() {
               '│                                                                │',
               '│ provider : groq                                                │',
               '│ model    : moonshotai/kimi-k2-instruct-0905                    │',
-              '│ dir      : ~/my-project                                     │',
+              '│ dir      : ~/my-project                                        │',
               '└────────────────────────────────────────────────────────────────┘',
               'you → hi',
 
