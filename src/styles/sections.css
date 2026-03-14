@@ -1,0 +1,24 @@
+.section {
+  padding: 54px 0 0;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 14px;
+}
+
+.h2 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.3px;
+}
+
+.sectionSub {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 14px;
+}
+

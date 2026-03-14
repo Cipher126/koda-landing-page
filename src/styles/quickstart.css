@@ -1,0 +1,97 @@
+.quickGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.steps {
+  display: grid;
+  gap: 14px;
+}
+
+.step {
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 14px;
+}
+
+.stepTitle {
+  font-family: var(--mono);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+.stepLabel {
+  margin-top: 6px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.stepNote {
+  margin: 8px 0 0;
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.envStep .codeBlock {
+  margin-top: 10px;
+}
+
+.codeBlock {
+  margin: 12px 0 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.35);
+  padding: 12px;
+  overflow: auto;
+}
+
+.codeBlock code {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.86);
+  white-space: pre;
+}
+
+.quickTerm {
+  display: grid;
+  gap: 10px;
+}
+
+.quickHint {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .quickGrid {
+    gap: 12px;
+  }
+
+  .step {
+    padding: 12px;
+  }
+
+  .codeBlock {
+    padding: 10px;
+  }
+
+  .codeBlock code {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .steps {
+    gap: 12px;
+  }
+
+  .quickTerm {
+    gap: 8px;
+  }
+}

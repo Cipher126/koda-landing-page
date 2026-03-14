@@ -1,0 +1,150 @@
+.providerRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.providerTile {
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+  align-self: start;
+}
+
+.providerTop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.providerIcon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.providerIcon.groq {
+  color: rgba(166, 255, 82, 0.9);
+  border-color: rgba(166, 255, 82, 0.22);
+  background: rgba(166, 255, 82, 0.08);
+}
+
+.providerIcon.gemini {
+  color: rgba(147, 197, 253, 0.95);
+  border-color: rgba(147, 197, 253, 0.22);
+  background: rgba(147, 197, 253, 0.08);
+}
+
+.providerIcon.openai {
+  color: rgba(251, 191, 36, 0.95);
+  border-color: rgba(251, 191, 36, 0.22);
+  background: rgba(251, 191, 36, 0.08);
+}
+
+.providerIcon.ollama {
+  color: rgba(252, 165, 165, 0.95);
+  border-color: rgba(252, 165, 165, 0.22);
+  background: rgba(252, 165, 165, 0.08);
+}
+
+.providerIcon.grok {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.providerSvg {
+  width: 22px;
+  height: 22px;
+}
+
+.providerIcon img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.providerIcon.groq img {
+  filter: invert(1);
+  opacity: 0.92;
+}
+
+.providerText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.providerName {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.providerMeta {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 12px;
+}
+
+.providerToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.22);
+  padding: 10px 12px;
+  border-radius: 14px;
+}
+
+.providerToggle:hover {
+  background: rgba(0, 0, 0, 0.34);
+}
+
+.providerToggleIcon {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.providerModels {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 360ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 260ms ease;
+}
+
+.providerModels.isOpen {
+  max-height: 420px;
+  opacity: 1;
+}
+
+.modelChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chip {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.78);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 6px 10px;
+}

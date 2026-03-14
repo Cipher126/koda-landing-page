@@ -1,0 +1,117 @@
+.tileGrid {
+  display: grid;
+  gap: 14px;
+}
+
+.tileGrid3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tile {
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  min-height: 190px;
+  opacity: 0;
+  transform: translateY(-22px) scale(0.985);
+  transition:
+    transform 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+.tileGrid.isInView .tile {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.tile:hover {
+  border-color: rgba(166, 255, 82, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tileTop {
+  display: grid;
+  gap: 10px;
+}
+
+.tileIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.tileIcon .i {
+  width: 26px;
+  height: 26px;
+}
+
+.tileIcon .logoSvg {
+  width: 30px;
+  height: 30px;
+}
+
+.tileTitle {
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.tileMeta {
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.tileBlurb {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.tileChips {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.miniChip {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 5px 9px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.tile-python .tileIcon {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.22);
+}
+
+.tile-js .tileIcon {
+  background: rgba(250, 204, 21, 0.1);
+  border-color: rgba(250, 204, 21, 0.22);
+}
+
+.tile-java .tileIcon {
+  background: rgba(248, 113, 113, 0.1);
+  border-color: rgba(248, 113, 113, 0.22);
+}

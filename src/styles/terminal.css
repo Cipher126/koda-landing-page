@@ -1,0 +1,245 @@
+.terminal {
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.44);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  height: 425px;
+  --terminal-h: 425px;
+}
+
+.terminalBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.terminalBar .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.terminalBar .dot.r {
+  background: rgba(255, 90, 101, 0.95);
+}
+
+.terminalBar .dot.y {
+  background: rgba(255, 204, 102, 0.95);
+}
+
+.terminalBar .dot.g {
+  background: rgba(52, 211, 153, 0.95);
+}
+
+.terminalBar .title {
+  margin-left: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.terminalBody {
+  margin: 0;
+  padding: 14px 14px 16px;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.86);
+  min-height: 220px;
+  height: calc(var(--terminal-h) - 42px);
+  overflow: auto;
+  background:
+    radial-gradient(900px 280px at 20% 0%, rgba(166, 255, 82, 0.06), transparent 55%),
+    radial-gradient(800px 260px at 80% 0%, rgba(147, 197, 253, 0.05), transparent 55%),
+    rgba(0, 0, 0, 0.44);
+}
+
+.terminalLine {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  white-space: pre;
+}
+
+.terminalLine.box {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.terminalLine.cmd {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.terminalLine.prompt .promptWho {
+  font-weight: 700;
+}
+
+.terminalLine.prompt-you .promptWho {
+  color: rgba(147, 197, 253, 0.95);
+}
+
+.terminalLine.prompt-koda .promptWho {
+  color: rgba(52, 211, 153, 0.95);
+}
+
+.terminalLine.prompt .promptArrow {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.terminalLine.prompt .promptRest {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.terminalLine.thinking {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.terminalLine.thinking .thinkingSpinner {
+  color: var(--accent);
+  margin-right: 6px;
+}
+
+.cursor {
+  color: var(--accent);
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0%,
+  48% {
+    opacity: 1;
+  }
+  49%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.terminalWrap {
+  position: relative;
+}
+
+.termExpandBtn {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  z-index: 2;
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+
+.termExpandBtn:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.termModal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.termBackdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(0, 0, 0, 0.58);
+  cursor: pointer;
+}
+
+.termModalPanel {
+  position: relative;
+  width: min(980px, 100%);
+  max-height: min(86vh, 980px);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+}
+
+.termModalTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(11, 13, 18, 0.75);
+  backdrop-filter: blur(14px);
+}
+
+.termModalTitle {
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.termCloseBtn {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.86);
+  cursor: pointer;
+}
+
+.termCloseBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.termModalPanel .terminal {
+  height: auto;
+}
+
+.termModalPanel .terminalBody {
+  height: auto;
+  min-height: auto;
+  max-height: 72vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .terminalBar {
+    padding: 9px 10px;
+  }
+
+  .terminalBody {
+    padding: 12px 10px 14px;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .terminalLine.box {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .terminalLine.cmd {
+    font-size: 11px;
+  }
+
+  .termExpandBtn {
+    top: 6px;
+    right: 8px;
+    padding: 7px 9px;
+    font-size: 11px;
+  }
+}
