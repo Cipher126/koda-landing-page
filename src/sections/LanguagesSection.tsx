@@ -16,7 +16,7 @@ const LANGUAGES: Language[] = [
   {
     name: 'Python',
     tone: 'python',
-    fileTypes: '.py',
+    fileTypes: '.py, .ipynb',
     tagline: 'Tooling, scripts, backends.',
     chips: ['build', 'debug', 'refactor'],
     icon: <LogoPython className="logoSvg python" title="Python" />,
@@ -24,7 +24,7 @@ const LANGUAGES: Language[] = [
   {
     name: 'JavaScript',
     tone: 'js',
-    fileTypes: '.js  .mjs  .ts',
+    fileTypes: '.js  .mjs  .ts, .jsx, .tsx',
     tagline: 'Web apps and Node services.',
     chips: ['web', 'node', 'tooling'],
     icon: <LogoJavaScript className="logoSvg js" title="JavaScript" />,
