@@ -10,7 +10,7 @@ export function HeroSection() {
     '│                                                                │',
     '│ provider : groq                                                │',
     '│ model    : moonshotai/kimi-k2-instruct-0905                    │',
-    '│ dir      : C:\\Users\\admin                                      │',
+    '│ dir      : ~/my-project                                     │',
     '└────────────────────────────────────────────────────────────────┘',
     '',
     'you → who are you and what can you do',
